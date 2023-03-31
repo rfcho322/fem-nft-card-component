@@ -1,0 +1,9 @@
+@use 'functions' as util;
+
+// Margins b = bottom
+.mb-1 {
+    margin-bottom: util.rem(15);
+}
+.mb-2 {
+    margin-bottom: util.rem(20);
+}

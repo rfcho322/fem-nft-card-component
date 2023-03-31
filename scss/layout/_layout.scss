@@ -1,0 +1,123 @@
+@use '../globals/colors';
+@use '../util';
+
+.wrapper {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    max-width: 350px;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: colors.$clr-neutral-300;
+
+    &__image {
+        position: relative;
+        max-width: 325px;
+        margin-inline: auto;
+        cursor: pointer;
+
+        &--nft-image {
+            border-radius: util.rem(10);
+        }
+    }
+
+    &__image:hover::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: util.rem(10);
+        background-color: colors.$clr-primary-200;
+        opacity: 0.5;
+    }
+
+    &__image:hover::after {
+        content: url('../images/icon-view.svg');
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__body--nft-name {
+        color: colors.$clr-neutral-100;
+        font-size: util.rem(24);
+    }
+    &__body--nft-name:hover {
+        cursor: pointer;
+        color: colors.$clr-primary-200;
+    }
+
+    &__body--nft-desc {
+        font-weight: 300;
+        font-size: util.rem(18);
+    }
+
+    &__body--nft-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__token,
+        &__timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        &__token {
+            font-weight: 600;
+            color: colors.$clr-primary-200;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-block-start: util.rem(15);
+        border-top: 1px solid colors.$clr-neutral-200;
+
+        &--avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid colors.$clr-neutral-100;
+        }
+
+        &--creator {
+            &__name {
+                color: colors.$clr-neutral-100;
+            }
+            &__name:hover {
+                cursor: pointer;
+                color: colors.$clr-primary-200;
+            }
+        }
+    }
+
+
+}
+
+.footer {
+    text-align: center;
+    padding-block: util.rem(15);
+
+    a {
+        color: colors.$clr-footer;
+    }
+}
+
