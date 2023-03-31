@@ -1,5 +1,6 @@
 @use '../globals/colors';
 @use '../util';
+@use 'sass:color';
 
 .wrapper {
     min-height: 100vh;
@@ -118,6 +119,9 @@
 
     a {
         color: colors.$clr-footer;
+    }
+    a:hover {
+        color: color.scale(colors.$clr-footer, $lightness: 20%);
     }
 }
 

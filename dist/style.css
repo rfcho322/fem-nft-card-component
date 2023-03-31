@@ -152,5 +152,8 @@ a, a:visited, a:active {
   padding-block: 0.9375rem;
 }
 .footer a {
-  color: hsl(178, 100%, 50%);
+  color: hsl(228, 45%, 44%);
+}
+.footer a:hover {
+  color: #596ec0;
 }/*# sourceMappingURL=style.css.map */
